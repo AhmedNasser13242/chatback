@@ -15,7 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://rapperd-chat.onrender.com"],
+    origin: [
+      "https://backchatapp.onrender.com",
+      "https://rapperd-chat.onrender.com",
+    ],
   })
 );
 
@@ -26,7 +29,7 @@ const server = require("http").createServer(app);
 const PORT = 5001;
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://backchatapp.onrender.com",
+    origin: "https://rapperd-chat.onrender.com",
     methods: ["GET", "POST"],
   },
 });
